@@ -2,11 +2,7 @@
 const path = require("path");
 const Database = require("better-sqlite3");
 
-// Use persistent storage when deployed, or the local project folder.
-const dbPath =
-    process.env.DATABASE_PATH ||
-    path.join(__dirname, "insurance.db");
-
+const dbPath = path.join(__dirname, "insurance.db");
 const db = new Database(dbPath);
 
 db.exec(`
@@ -42,7 +38,6 @@ db.exec(`
     );
 `);
 
-// Safely migrate existing databases.
 const migrations = [
     ["policy_term", "INTEGER"],
     ["smoking_status", "TEXT"],
@@ -52,14 +47,10 @@ const migrations = [
 ];
 
 for (const [name, type] of migrations) {
-    const columns = db.prepare(
-        "PRAGMA table_info(quote_records)"
-    ).all();
+    const columns = db.prepare("PRAGMA table_info(quote_records)").all();
 
     if (!columns.some(column => column.name === name)) {
-        db.exec(
-            `ALTER TABLE quote_records ADD COLUMN ${name} ${type}`
-        );
+        db.exec(`ALTER TABLE quote_records ADD COLUMN ${name} ${type}`);
     }
 }
 
