@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
 <header class="navbar">
     <div class="brand">
         <div class="logo">TC</div>
@@ -19,6 +21,7 @@
 </header>
 
 <main class="container">
+
     <section class="hero">
         <div>
             <p class="eyebrow">SMART INSURANCE COMPARISON</p>
@@ -37,11 +40,13 @@
             <h2 id="quoteCount">0</h2>
             <p>Quotes in your database</p>
         </div>
+
         <div class="stat-card">
             <span>Life Cover Reference</span>
             <h2>₹1 Crore</h2>
             <p>Example profile</p>
         </div>
+
         <div class="stat-card">
             <span>Policy Term Reference</span>
             <h2>30 Years</h2>
@@ -60,27 +65,34 @@
 
         <form id="quoteForm">
             <div class="form-grid">
+
                 <label>Insurer / Plan Name *
                     <input name="insurer_name" required>
                 </label>
+
                 <label>Age *
                     <input name="age" type="number" min="18" max="100" value="25" required>
                 </label>
+
                 <label>Life Cover (₹) *
                     <input name="cover_amount" type="number" min="1" value="10000000" required>
                 </label>
+
                 <label>Policy Term (years) *
                     <input name="policy_term" type="number" min="1" max="100" value="30" required>
                 </label>
+
                 <label>Premium Amount (₹) *
                     <input name="premium_amount" type="number" min="0.01" step="0.01" required>
                 </label>
+
                 <label>Premium Frequency *
                     <select name="premium_frequency" required>
                         <option value="annual">Annual</option>
                         <option value="monthly">Monthly</option>
                     </select>
                 </label>
+
                 <label>Smoking Status *
                     <select name="smoking_status" required>
                         <option value="">Select actual quote assumption</option>
@@ -88,6 +100,7 @@
                         <option value="smoker">Smoker</option>
                     </select>
                 </label>
+
                 <label>Health Profile *
                     <select name="health_profile" required>
                         <option value="">Select actual quote assumption</option>
@@ -95,9 +108,11 @@
                         <option value="other">Other / non-standard</option>
                     </select>
                 </label>
+
                 <label>Premium Payment Term (years) *
                     <input name="premium_payment_term" type="number" min="1" max="100" value="30" required>
                 </label>
+
                 <label>Optional Riders *
                     <select name="riders" required>
                         <option value="">Select actual quote assumption</option>
@@ -105,12 +120,15 @@
                         <option value="with-riders">Includes optional riders</option>
                     </select>
                 </label>
+
                 <label>Claim Ratio (%)
                     <input name="claim_ratio" type="number" min="0" max="100" step="0.01" placeholder="Optional">
                 </label>
+
                 <label>Claim Ratio Reporting Year
                     <input name="claim_ratio_year" placeholder="e.g. 2024-25">
                 </label>
+
                 <label>Health Question Answer
                     <select name="health_answer">
                         <option value="">Not provided</option>
@@ -118,13 +136,16 @@
                         <option value="No">No</option>
                     </select>
                 </label>
+
                 <label>Official Source URL
                     <input name="source_url" type="url" placeholder="https://...">
                 </label>
+
                 <label class="full-width">Evidence / Source Notes
                     <textarea name="evidence" rows="3"
                         placeholder="Source, quote date, assumptions, and whether this is synthetic data."></textarea>
                 </label>
+
             </div>
 
             <p class="hint">
@@ -136,10 +157,12 @@
                 <button id="saveQuoteBtn" class="primary-btn" type="submit">
                     Save Quote
                 </button>
+
                 <button id="cancelEditBtn" class="secondary-btn" type="button" hidden>
                     Cancel Edit
                 </button>
             </div>
+
             <p id="formMessage" class="message" role="status"></p>
         </form>
     </section>
@@ -151,25 +174,35 @@
                 <h2>Saved insurance quotes</h2>
                 <p>Select at least two quotes to compare.</p>
             </div>
+
             <button id="refreshBtn" class="secondary-btn" type="button">
                 Refresh Quotes
             </button>
         </div>
 
-        <div id="quotesList" class="quotes-list">Loading quotes...</div>
+        <!-- JavaScript renders the saved quote cards inside this container -->
+        <div id="quotesList" class="quotes-list" aria-live="polite">
+            <p>Loading quotes...</p>
+        </div>
 
         <button id="compareBtn" class="primary-btn" type="button">
             Compare Selected Quotes
         </button>
+
         <div id="comparisonResult" class="result-area" aria-live="polite"></div>
     </section>
 
     <footer>
         <p>TermCompare · Educational project</p>
-        <p>Monthly premium × 12 is a calculated annual equivalent, not necessarily the actual annual billed premium.</p>
+        <p>
+            Monthly premium × 12 is a calculated annual equivalent,
+            not necessarily the actual annual billed premium.
+        </p>
     </footer>
+
 </main>
 
 <script src="/app.js"></script>
 </body>
 </html>
+```
