@@ -391,4 +391,4 @@ compareBtn.addEventListener("click", async () => {
     }
 });
 loadQuotes();
-loadQuotes();
+
