@@ -1,1 +1,80 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TermCompare | Insurance Quote Comparer</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="brand">
+        <div class="logo">TC</div>
+        <div>
+            <h2>TermCompare</h2>
+            <p>Term Insurance Quote Comparer</p>
+        </div>
+    </div>
+    <span class="status">Comparison dashboard</span>
+</header>
 
+<main class="container">
+    <section class="hero">
+        <div>
+            <p class="eyebrow">SMART INSURANCE COMPARISON</p>
+            <h1>Compare plans.<br><span>Choose with clarity.</span></h1>
+            <p class="hero-text">
+                Compare quotes using matching policy assumptions,
+                transparent calculations, and source evidence.
+            </p>
+        </div>
+        <div class="hero-icon">🛡️</div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-card">
+            <span>Saved Quotes</span>
+            <h2 id="quoteCount">0</h2>
+            <p>Quotes in your database</p>
+        </div>
+        <div class="stat-card">
+            <span>Life Cover Reference</span>
+            <h2>₹1 Crore</h2>
+            <p>Example profile</p>
+        </div>
+        <div class="stat-card">
+            <span>Policy Term Reference</span>
+            <h2>30 Years</h2>
+            <p>Example profile</p>
+        </div>
+    </section>
+
+    <section class="panel">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">QUOTE MANAGEMENT</p>
+                <h2 id="formHeading">Add an insurance quote</h2>
+                <p>Use the actual assumptions shown in the quote.</p>
+            </div>
+        </div>
+
+        <form id="quoteForm">
+            <div class="form-grid">
+                <label>Insurer / Plan Name *
+                    <input name="insurer_name" required>
+                </label>
+
+                <label>Age *
+                    <input name="age" type="number" min="18" max="100" value="25" required>
+                </label>
+
+                <label>Life Cover (₹) *
+                    <input name="cover_amount" type="number" min="1" value="10000000" required>
+                </label>
+
+                <label>Policy Term (years) *
+                    <input name="policy_term" type="number" min="1" max="100" value="30" required>
+                </label>
+
+                <
